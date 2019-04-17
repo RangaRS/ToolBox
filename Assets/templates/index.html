@@ -1,0 +1,41 @@
+{% extends 'static_nav.html' %}
+{% block body %}
+{% load static %}
+<div id="leftNav">
+      <ul>
+          {% for folder,files in imgrepo.items %}
+          {% if forloop.first %}
+            <li onclick="scrolltobox(this)" class="active tabs" data-tab="{{folder}}">{{folder}}</li>
+          {% else %}
+            <li onclick="scrolltobox(this)" class="tabs" data-tab="{{folder}}">{{folder}}</li>
+          {% endif %}
+          {% endfor %}
+      </ul>
+    </div>
+
+{% for folder,files in imgrepo.items %}
+    <div data-tab-body="{{folder}}" class="box">
+    <ul class="iconlist">
+    <li class="secTitle"> {{ folder }} </li>
+
+    {% for file in files %}
+        <li class="imgs">
+            {% if folder != 'misc' %}
+                <a href="{% static '/assets/' %}{{assetName}}/{{folder}}/{{file}}" download>
+                <div align="center" style="width:75px; height: 75px; vertical-align: middle; margin: 0px;">
+                <img src="/static/assets/{{assetName}}/{{folder}}/{{file}}">
+            {% else %}
+                <a href="{% static '/assets/' %}{{assetName}}/{{file}}" download>
+                <div align="center" style="width:75px; height: 75px; vertical-align: middle; margin: 0px;">
+                <img src="/static/assets/{{assetName}}/{{file}}">
+            {% endif %}
+            </div>
+            <span>{{ file }}</span>
+            </a>
+        </li>
+    {% endfor %}
+
+    </ul>
+    </div>
+{% endfor %}
+{% endblock %}

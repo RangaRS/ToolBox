@@ -1,0 +1,44 @@
+{% extends 'static_nav.html' %}
+{% block body %}
+
+<div class="box listContainer">
+    <div style="width: calc(100% - 120px); position:relative;">
+    <div id="searchbarcontainer" class="searchbarcontainer">
+        <input id="tagSearch" onkeyup="getTagList(this)" type="text" placeholder="Search icons by Tags/Reference" height="50px">
+    </div>
+    <div style="display:none;" id="tagListContainer"></div>
+</div>
+    <div onclick="showUploadForm()" class="btn-Primary"> + Upload </div>
+</div>
+
+<div class="box" align='left' id="previewicons">
+    {% for asset in assets %}
+            <div id="A{{asset}}" class="iconContainer">
+                <div class="actions">
+                    <a class="iconAnchor" href="/static/assets/images/icon/{{asset}}.svg" download="{{asset}}">
+                        <img class="download" data-model-name="{{asset}}" src="/static/images/download.svg">
+                    </a>
+                    <img class="edit" data-model-name="{{asset}}" onclick="copyImg(this)" src="/static/images/copy.svg">
+                    <img class="delete" data-model-name="{{asset}}" onclick="deleteAsset(this)" src="/static/images/delete.svg">
+                </div>
+                <img src="/static/assets/images/icon/{{asset}}.svg">
+            </div>
+    {% endfor %}
+</div>
+
+<div style="display: none;" id="sideWindow">
+    <span onclick="hideWindow()" class="closeWindow">X</span>
+        <form id="uploadForm" method="post" enctype="multipart/form-data" action="">
+            {% csrf_token %}
+            {% for field in iconForm %}
+                <div class="fieldWrapper">
+                    {{ field.errors }}
+                    {{ field.label_tag }} {{ field }}
+                </div>
+            {% endfor %}
+            <div class="btn-Primary" onclick="submitForm('uploadForm')">Submit Form</div>
+            <input class="btn-Primary" type="submit" value="upload icon"/>
+        </form>
+    </div>
+
+{% endblock %}

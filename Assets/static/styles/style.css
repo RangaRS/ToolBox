@@ -1,0 +1,539 @@
+
+    html, body {
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 100;
+        transition: 0.4s ease-in-out;
+        background: #eef0f2;
+    }
+
+    ul, li {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+    }
+
+    a {
+        text-style: none;
+    }
+
+    div {
+        display: inline-block;
+    }
+
+    .topNav {
+        display: inline-block;
+        width: 100%;
+        box-shadow: 0px 0px 15px -10px #143044;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 100;
+        background: #fff;
+        border-bottom: 1px solid #d8d8d8;
+    }
+
+    .topNav * {
+        vertical-align: middle;
+    }
+
+    .logo {
+        display: inline-block;
+        font-size: 18px;
+        padding: 15px 20px;
+        color: #333;
+    }
+
+    .filters {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    #quickSearch {
+    width: 350px;
+    height: 30px;
+    padding: 0px 15px;
+    font-size: 13px;
+    color: #9a9a9a;
+    background: #f1efef;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    box-shadow: 0px 2px 5px -5px #a0a0a0;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+    transition: transform ease-in-out 0.2s;
+}
+
+    .bodyDiv {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        margin-top: 52px;
+    }
+
+    .secTitle {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 30px 25px;
+        text-align: left;
+        border-bottom: 1px solid #dadada;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .imgs {
+        width: 15%;
+        font-size: 13px;
+        color: black;
+        display: inline-block;
+        padding: 10px;
+        margin: 5px;
+        list-style: none;
+        text-align: center;
+        vertical-align: top;
+        border-radius: 5px;
+        transition: 0.1s ease-in-out;
+    }
+
+    .imgs:hover {
+        box-shadow: 0px 1px 10px -3px #888888;
+    }
+
+    .box {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 5px -2px #dadada;
+    width: calc(100% - 250px);
+    padding: 10px;
+    box-sizing: border-box;
+    background: #fff;
+    margin-top: 20px;
+}
+
+    .imgs a {
+        display: inline-block;
+    }
+
+    .imgs a div > img {
+        display: inline-block;
+        width: 50px;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .imgs a > span {
+        display: block;
+        padding: 3px;
+        box-sizing: border-box;
+        color: black;
+    }
+
+    .iconlist {
+        text-align: justify;
+    }
+
+    #leftNav {
+        display: inline-block;
+        position: fixed;
+        left: 0px;
+        height: 100%;
+        width: 220px;
+        z-index: 10;
+        background: #303e54;
+        box-shadow: 2px 0px 10px -5px #333;
+    }
+
+    #leftNav ul {
+        height: 100%;
+    }
+
+    #leftNav ul li {
+        padding: 15px 20px;
+        font-size: 15px;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+        color: #a4afbb;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+    #leftNav ul li:hover {
+        background: #283546;
+    }
+
+    #leftNav ul li.active {
+        color: #ffffff !important;
+        background: #1c2a3e;
+        border-left: 2px solid #dc3c0c;
+    }
+
+    #pageLoader {
+        display: block;
+        height: 3px;
+        background: red;
+        position: relative;
+        transition: 0.3s ease-in-out;
+    }
+
+    #loaderbar {
+        width: 50px;
+        height: inherit;
+        background: #fff;
+        position: absolute;
+        top: 0px;
+        left: 100%;
+        animation-name: pageloadanimation;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes pageloadanimation {
+        0% {
+            left: -10%;
+            width: 100px;
+        }
+
+
+        50% {
+            left: 105%;
+            width: 100px;
+        }
+
+
+
+        100% {
+            left: -10%;
+            width: 100px;
+        }
+    }
+
+    #sideWindow {
+        display: inline-block;
+        color: #333;
+        padding-top: 10px;
+        position: absolute;
+        top: 50px;
+        right: 0px;
+        height: 100%;
+        background: #fff;
+        padding: 40px;
+        box-shadow: 0px 0px 10px -2px #dadada;
+        z-index: 1000;
+        padding-top: 5px;
+    }
+
+    span.tagItem {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #dadada;
+        text-align: left;
+    }
+
+    span.tagItem:hover {
+        background: #f7f7f7;
+        cursor: pointer;
+    }
+
+    #tagListContainer {
+        width: 100%;
+        background: #fff;
+        max-height: 200px;
+        overflow: scroll;
+        position: absolute;
+        top: 35px;
+        left: 0px;
+        z-index: 1000;
+        background: #fff;
+        border: 1px solid #efefef;
+        box-shadow: 0px 4px 15px -5px #bfbfbf;
+    }
+
+    .searchbarcontainer {
+        width: 100%;
+        background: #fff;
+        border: 1px solid #f7f7f7;
+        position: relative;
+        display: flex;
+    }
+
+   .searchbarcontainer input {
+        min-width: 50px;
+        max-width: 100%;
+        height: 30px;
+        font-size: 16px;
+        font-weight: 100;
+        border: none;
+        width: 100%;
+        font-style: italic;
+    }
+
+    .searchbarcontainer input:focus {
+        font-style: bold;
+        font-weight: 400;
+    }
+
+   .selectedTag {
+      display: inline-block;
+      padding: 5px 10px;
+      color: #fff;
+      background: #15c19a;
+      border-radius: 3px;
+      margin: 1px;
+      flex: none;
+      transition: 0.1s;
+   }
+
+   span.selectedTag:hover {
+        background: #de3838;
+        cursor: pointer;
+        text-decoration: line-through;
+   }
+
+   //span.selectedTag:hover:after {
+   //     content: 'X';
+   //     cursor: pointer;
+   //     padding-left: 5px;
+   //     font-size: 12px;
+   //}
+
+   div#previewicons {
+        width: calc(100% - 250px);
+        display: flex;
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: 0px 5px 10px -2px #dadada;
+        box-sizing: border-box;
+        background: #fff;
+        margin-top: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+   div.iconContainer {
+        width: 40px;
+        height: 40px;
+        padding: 40px;
+        display: flex;
+        background: #fff;
+        border-radius: 5px;
+        margin: 3px;
+        transition: 0.2s ease-out;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+   .iconContainer:hover {
+        background: #e8eff9;
+    }
+
+   .iconContainer img {
+        width: 70%;
+        height: 70%;
+   }
+
+   .iconContainer .actions {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        opacity: 0;
+        transition: 0.2s ease-out;
+        cursor: pointer;
+   }
+
+   .iconContainer .actions img {
+        width: 10px;
+        height: 10px;
+        padding: 5px;
+        background: #fff;
+        box-shadow: 0px 1px 5px -1px #dadada;
+   }
+
+   .iconContainer:hover .actions {
+        opacity: 1;
+   }
+
+   .iconContainer:hover .actions img:hover {
+        filter: invert(1);
+   }
+
+   .iconContainer .actions .edit:hover {
+        background: #e67736;
+   }
+
+   .iconContainer .actions .delete:hover {
+        background: #00ced8;
+   }
+
+   .iconContainer .actions .download:hover {
+        background: #7640de;
+   }
+
+   .closeWindow {
+        display: block;
+        font-size: 30px;
+        font-weight: 100;
+        padding: 10px 0px;
+        text-align: left;
+    }
+
+   .btn-Primary {
+        padding: 10px 15px;
+        margin-left: 15px;
+        background: #4285F4;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 13px;
+        cursor: pointer;
+        border: 0px;
+        outline: none;
+    }
+
+    .toast {
+        display: flex;
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        padding: 20px;
+        background: #333;
+        border-radius: 5px;
+        box-shadow: 0px 0px 15px -5px #dadada;
+        color: #fff;
+        width: 300px;
+        align-items: center;
+        transition: 0.2s ease-in;
+    }
+
+    .success {
+        background: #a6c703;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #8fa90f, #a6c703);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #8fa90f, #a6c703); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        box-shadow: 0px 5px 15px -5px #52610a;
+     }
+
+    .error {
+        background: #EB3349;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        box-shadow: 0px 5px 15px -5px #b90e22;
+     }
+
+
+    .info {
+        background: #7474BF;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        box-shadow: 0px 5px 15px -5px #7474BF;
+      }
+
+    .alert {
+        background: #ed8f03; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #ffb75e, #ed8f03); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #ffb75e, #ed8f03); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        box-shadow: 0px 5px 15px -5px #9c5b0a;
+    }
+
+    .toast .statusIcon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        padding: 0px 20px 0px 0px;
+        filter: invert(1);
+    }
+
+    .toast .statusMsg {
+        display: inline-block;
+        vertical-align: middle;
+        white-space: wrap;
+        color:#fff;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .fieldWrapper {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin: 20px 0px;
+    }
+
+    .fieldWrapper label {
+        display: block;
+        width: 100%;
+        text-align: left;
+        font-size: 20px;
+        font-style: inherit;
+    }
+
+    .fieldWrapper input {
+        padding: 10px 0px;
+    }
+
+    input:not([type='submit']), select, textarea {
+        outline: none;
+        min-width: 300px;
+    }
+
+    select {
+        height: 30px;
+        margin: 10px 0px;
+    }
+
+    span.navLink {
+        display: inline-block;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: 0.2s ease-in;
+    }
+
+    span.navLink.active {
+        color: #ff7a14;
+        font-weight: bold;
+    }
+
+    .UserAcc {
+        float: right;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .UserAcc a {
+        padding: 10px 15px;
+        margin: 5px;
+        border-radius: 5px;
+        font-weight: 500;
+        display: inline-block;
+    }
+
+    .UserAcc .active {
+        background: #f9fff6;
+        border: 1px solid #6bb143;
+        color: #6cb143;
+    }
+
+    .UserAcc .inactive {
+        background: #f5f5f5;
+        border: 1px solid #e6e6e6;
+        color: #333333;
+    }
+
+
+
+
+
+

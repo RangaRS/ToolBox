@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing new features page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+    <script src="{% static 'scripts/main.js' %}"></script>
+    <style>
+</style>
+    <script>
+
+    </script>
+</head>
+<body>
+
+<div style="width:300px;">
+    <div id="searchbarcontainer" class="searchbarcontainer">
+        <div id="selectedTagsContainer"></div>
+        <input id="tagSearch" onkeyup="getTagList(this)" type="text" width="200px" height="50px">
+    </div>
+    <div id="tagListContainer"></div>
+</div>
+
+<div id="previewicons"></div>
+</body>
+</html>

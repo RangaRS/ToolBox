@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Sans+Pro:200,300,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+    <script src="{% static 'scripts/main.js' %}"></script>
+    <script src="{% static 'scripts/toast.js' %}"></script>
+</head>
+<body id="docBody">
+<div class="topNav">
+    <span id="pageLoader"><div id="loaderbar"></div></span>
+    <div class="logo"><b style="color:#ff7a00">MDM </b> <span>DESIGNLAB</span></div>
+    <div class="filters">
+          <input id="quickSearch" type="text" placeholder="Under Construction"  />
+      </div>
+    <div id="navLinkBody">
+        <span class="navLink active"><a>UI Resources</a></span>
+         <span class="navLink"><a>Design System</a></span>
+         <span class="navLink"><a>Ember Components</a></span>
+         <span class="navLink"><a>Blogs</a></span>
+         <span class="navLink"><a>Tools</a></span>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="UserAcc"><a class="active" href="/admin/logout/">Logout</a></div>
+    {% else %}
+    <div class="UserAcc"><a class="inactive" href="/admin/">Login</a></div>
+    {% endif %}
+</div>
+
+<div align="center" class="bodyDiv">
+{% block body %}
+{% endblock %}
+</div>
+</body>
