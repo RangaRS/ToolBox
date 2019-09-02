@@ -6,4 +6,4 @@ Update in V1.0:
 
 Added icon repository - currently accepts all image types but only previews SVG.
 Download, Upload and Delete icons support.
-Delete is only supported for Admin while download and upload is available globally.
+Delete is only supported for Admin while download and upload is available globally..
